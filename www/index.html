@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <title>Tagged Base64 Converter</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { background: rgb(250, 250, 250); font-family: Sans-Serif; margin: 2pc; }
+    .button { text-align: right; }
+    button {
+      background-color: rgb(90, 181, 255); border: 2px solid transparent; border-radius: 1em;
+      margin-top: 0em; margin-bottom: 2em; padding: 1em 2em 1em 2em; color: white;
+    }
+    .before-msg { margin-bottom: 0em; }
+    button:active { background-color: rgb(141, 204, 255); border: 2px solid rgb(90, 181, 255); }
+    button:hover { background-color: rgb(141, 204, 255); }
+    button:focus { background-color:  rgb(0, 112, 204); }
+    .emphasis { font-style: italic;}
+    .msg { background: transparent; border: none; border-width: 0; color: rgb(0, 112, 204); }
+    h1 { font-size: 1.25em; margin-top: 2em }
+    input, textarea { border: 1px solid gray; margin-bottom: 0.5em; padding: 0.5em; width: 100%; }
+    div { color: rgb(0, 112, 204); margin-bottom: 0.5em; }
+    li { margin-bottom: 0.5em; }
+  </style>
+  </head>
+  <body>
+    <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
+    <script src="./bootstrap.js"></script>
+
+    <h1>Tagged Base64</h1>
+    <p>If you work with digital values such as digital signatures, public keys, and transaction identifiers,
+      <a href='https://github.com/EspressoSystems/tagged-base64'>Tagged Base64</a>
+       can help you avoid confusion and detect corruption through three features.</p>
+    <ul>
+      <li>The tag is intended to give a hint about what kind of value is encoded</li>
+      <li>The limited <a href='https://en.wikipedia.org/wiki/Base64'>Base64</a> character set is selected to
+        work without fuss in URLs, plain text, email, SMS, and command line arguments, etc.</li>
+      <li>A <a href='https://en.wikipedia.org/wiki/Cyclic_redundancy_check'>checksum</a> covers the tag
+        and the value so inadvertent truncation or other corruption can very likely be detected immediately
+      </li>
+    </ul>
+      
+    <p>The two forms below allow you to experiment with encoding and decoding values using Tagged Base64.
+      The tag and value are alphanumeric separated by a tilda (~). Base64 requires two additional characters.</p>
+      <ul><li>26 lowercase letters + 26 uppercase letters + 10 digits = 62 symbols</li></ul>
+    <p>The additional characters are underscore (_) and hyphen (-).</p>
+    <p><span class='emphasis'>Disclaimer</span>: If any of this is unfamililar, it might be tempting make assumptions.
+      TaggedBase64 is not intended for protecting secrets. There's no encryption here, just encoding. Nothing here stops
+      a bad actor from acting badly. The checksum reduces the chances an error will go undetected; it's not a guarantee.
+    </p>
+
+    <h1>Encode Tagged Base64</h1>
+
+    <p>Encode a Tagged Base64 by filling out the form below and pressing the Encode button.</p>
+    <div>Tag<input type="text" id='tag_in'></div>
+    <div>Value<textarea id='value_in'></textarea></div>
+    <div class='button'><button id='encode' type='button'>Encode</button></div>
+    <div>Tagged Base64<textarea id='tb64_out'></textarea></div>
+    <div class='button'><button class='before-msg' id='copy_tb64' type='button'>Copy</button></div>
+    <div><input id='status_encode_copy' type='text' class='msg' readonly disabled></div>
+
+    <h1>Decode Tagged Base64</h1>
+
+    <p>Decode a Tagged Base64 by filling out the form below and pressing the Decode button.</p>
+    <p>Here are some examples to decode</p>
+    <ul>
+      <li>Hi~SGVsbG8sIHlvdSEs</li>
+      <li>CARD~QeKZpTE</li>
+      <li>PHONE~ODY3NTMwOcQ</li>
+      <li>zh-CN~5L2g5aW9WQ</li>
+    </ul>
+    <div>Tagged Base64<textarea id='tb64_in'></textarea></div>
+    <div class='button'><button id='decode' type='button'>Decode</button></div>
+    <div>Decoded value<textarea id='decoded_out'></textarea></div>
+    <div class='button'><button id='copy_decoded' type='button'>Copy</button></div>
+    <div><input id='status_decode_copy' type='text' class='msg' readonly disabled></div>
+  </body>
