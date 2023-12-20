@@ -2,7 +2,7 @@
 
 Tagged Base64 Converter is a simple web app for encoding and decoding information in [Tagged Base64](https://github.com/EspressoSystems/tagged-base64) format. It is intended to be practical, but also to be a simple example of a web interface to a Rust library.
 
-<img src='docs/ui_encode1.png' style='width:25%;height:25%;border:1px solid #AAAAAA' alt='Encoding form'> <img src='docs/ui_decode1.png' style='width:25%;height:25%;border:1px solid #AAAAAA' alt='Decoding form'>
+<img src='docs/ui_encode1.png' style='width:50%;height:50%' alt='Encoding form'> <img src='docs/ui_decode1.png' style='width:50%;height:50%' alt='Decoding form'>
 
 ## Setup
 
