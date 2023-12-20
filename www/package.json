@@ -1,7 +1,7 @@
 {
   "name": "tagged-base64-converter",
   "version": "0.1.0",
-  "description": "a web app to convert to and from Tagged Base64",
+  "description": "A web app to convert to and from Tagged Base64",
   "main": "index.js",
   "bin": {
     "create-wasm-app": ".bin/create-wasm-app.js"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rustwasm/create-wasm-app.git"
+    "url": "git+https://github.com/pictographer/tb64-converter.git"
   },
   "keywords": [
     "TaggedBase64",
@@ -24,9 +24,9 @@
   "author": "John D. Corbett <corbett@pictographer.com>",
   "license": "(MIT OR Apache-2.0)",
   "bugs": {
-    "url": "https://github.com/rustwasm/create-wasm-app/issues"
+    "url": "https://github.com/pictographer/tb64-converter/issues"
   },
-  "homepage": "https://github.com/rustwasm/create-wasm-app#readme",
+  "homepage": "https://github.com/pictographer/tb64-converter#readme",
   "dependencies": {
     "tb64-wasm-shim": "file:../pkg"
   },
