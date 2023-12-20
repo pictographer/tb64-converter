@@ -1,0 +1,30 @@
+{
+  "name": "tb64-wasm-shim",
+  "collaborators": [
+    "pictographer <corbett@pictographer.com>"
+  ],
+  "description": "Shim for a web interface to TaggedBase64",
+  "version": "0.1.0",
+  "license": "MIT OR Apache-2.0",
+  "files": [
+    "tb64_wasm_shim_bg.wasm",
+    "tb64_wasm_shim.js",
+    "tb64_wasm_shim_bg.js",
+    "tb64_wasm_shim.d.ts",
+    "LICENSE_APACHE",
+    "LICENSE_MIT"
+  ],
+  "module": "tb64_wasm_shim.js",
+  "types": "tb64_wasm_shim.d.ts",
+  "sideEffects": [
+    "./tb64_wasm_shim.js",
+    "./snippets/*"
+  ],
+  "keywords": [
+    "web",
+    "blockchain",
+    "webassembly",
+    "gui",
+    "serialization"
+  ]
+}
