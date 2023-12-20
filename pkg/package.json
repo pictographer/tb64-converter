@@ -9,7 +9,6 @@
   "files": [
     "tb64_wasm_shim_bg.wasm",
     "tb64_wasm_shim.js",
-    "tb64_wasm_shim_bg.js",
     "tb64_wasm_shim.d.ts",
     "LICENSE_APACHE",
     "LICENSE_MIT"
@@ -17,7 +16,6 @@
   "module": "tb64_wasm_shim.js",
   "types": "tb64_wasm_shim.d.ts",
   "sideEffects": [
-    "./tb64_wasm_shim.js",
     "./snippets/*"
   ],
   "keywords": [
