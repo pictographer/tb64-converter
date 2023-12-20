@@ -2,7 +2,7 @@
 
 Tagged Base64 Converter is a simple web app for encoding and decoding information in [Tagged Base64](https://github.com/EspressoSystems/tagged-base64) format. It is intended to be practical, but also to be a simple example of a web interface to a Rust library.
 
-<img src='docs/ui_encode1.png' style='width:25%;height:25%;border:1px solid #CCCCCC' alt='Encoding form'> <img src='docs/ui_decode1.png' style='width:25%;height:25%;border:1px solid #CCCCCC' alt='Decoding form'>
+<img src='docs/ui_encode1.png' style='width:25%;height:25%;border:1px solid #AAAAAA' alt='Encoding form'> <img src='docs/ui_decode1.png' style='width:25%;height:25%;border:1px solid #AAAAAA' alt='Decoding form'>
 
 ## Setup
 
@@ -17,13 +17,15 @@ For development, tools for building and packaging Rust, wasm, and JavaScript are
 
 ## Development
 
+The following commands are needed after source changes
+
 - `wasm-pack build`
 - `(cd www && [npm install](https://docs.npmjs.com/cli/v10/commands/npm-install))`
 - `(cd www && NODE_OPTIONS=--openssl-legacy-provider [npm start](https://docs.npmjs.com/cli/v10/commands/npm-start))`
 
 When you change the Rust code, you need to use `wasm-pack build` to recreate `tb64_wasm_shim_bg.wasm` and the wrappers in the `pkg` directory. Node finds these files via `www/package.json`.
 
-:warning: _Both the pkg directory and the www directory contain a_ `package.json`_. The one in the pkg directory describes the wasm-related assets. The one in the www directory describes the web app._
+:warning: _Both the_ `pkg` _directory and the_ `www` _directory contain a_ `package.json`_. The one in the_ `pkg` _directory describes the wasm-related assets. The one in the_ `www` _directory describes the web app._
 
 ```
 wasm-pack build
@@ -39,7 +41,7 @@ When you modify the JavaScript or HTML, assets usually reload automatically. Oth
 (cd www && NODE_OPTIONS=--openssl-legacy-provider npm run start)
 ```
 
-NODE_OPTIONS must include --openssl-legacy-provider because wasm-pack inherits [and issue](https://github.com/webpack/webpack/issues/14532) from [webpack](https://webpack.js.org/). A change to OpenSSL left a hash function deprecated. Webpack is planning to migrate to a different hash function for webpack 6.
+`NODE_OPTIONS` must include `--openssl-legacy-provider` because wasm-pack inherits [an issue](https://github.com/webpack/webpack/issues/14532) from [webpack](https://webpack.js.org/). OpenSSL deprecated a hash function. Webpack is planning to migrate to a different hash function for webpack 6.
 
 [`www/package.json`](https://docs.npmjs.com/cli/v10/configuring-npm/package-json) tells NPM where to find things including the Wasm bytecodes and the JavaScript wrappers.
 
