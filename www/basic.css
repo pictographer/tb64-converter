@@ -1,0 +1,17 @@
+    * { box-sizing: border-box; }
+    body { background: rgb(250, 250, 250); font-family: Sans-Serif; margin: 2pc; }
+    .button { text-align: right; }
+    button {
+      background-color: rgb(90, 181, 255); border: 2px solid transparent; border-radius: 1em;
+      margin-top: 0em; margin-bottom: 2em; padding: 1em 2em 1em 2em; color: white;
+    }
+    .before-msg { margin-bottom: 0em; }
+    button:active { background-color: rgb(141, 204, 255); border: 2px solid rgb(90, 181, 255); }
+    button:hover { background-color: rgb(141, 204, 255); }
+    button:focus { background-color:  rgb(0, 112, 204); }
+    .emphasis { font-style: italic;}
+    .msg { background: transparent; border: none; border-width: 0; color: rgb(0, 112, 204); }
+    h1 { font-size: 1.25em; margin-top: 2em }
+    input, textarea { border: 1px solid gray; margin-bottom: 0.5em; padding: 0.5em; width: 100%; }
+    div { color: rgb(0, 112, 204); margin-bottom: 0.5em; }
+    li { margin-bottom: 0.5em; }

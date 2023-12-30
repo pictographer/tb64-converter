@@ -1,1 +1,5 @@
 dist
+node_modules
+!node_modules/tb64-wasm-shim/
+!node_modules/tb64-wasm-shim/*
+
