@@ -4,6 +4,9 @@ Tagged Base64 Converter is a simple web app for encoding and decoding informatio
 
 <img src='docs/ui_encode1.png' style='width:50%;height:50%' alt='Encoding form'> <img src='docs/ui_decode1.png' style='width:50%;height:50%' alt='Decoding form'>
 
+Here is a [mockup of the web
+interface](https://pictographer.github.io/tb64-converter/www/).
+
 ## Setup
 
 For development, tools for building and packaging Rust, wasm, and JavaScript are needed. After the wasm assets are built, only a web server is needed.
