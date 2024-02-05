@@ -23,8 +23,8 @@ For development, tools for building and packaging Rust, wasm, and JavaScript are
 The following commands are needed after source changes
 
 - `wasm-pack build`
-- `(cd www && [npm install](https://docs.npmjs.com/cli/v10/commands/npm-install))`
-- `(cd www && NODE_OPTIONS=--openssl-legacy-provider [npm start](https://docs.npmjs.com/cli/v10/commands/npm-start))`
+- `(cd www && npm install)`
+- `(cd www && NODE_OPTIONS=--openssl-legacy-provider)`
 
 When you change the Rust code, you need to use `wasm-pack build` to recreate `tb64_wasm_shim_bg.wasm` and the wrappers in the `pkg` directory. Node finds these files via `www/package.json`.
 
@@ -40,6 +40,9 @@ Before you can run the web server, you need to install the required Node modules
 ```
 
 When you modify the JavaScript or HTML, assets usually reload automatically. Otherwise, kill and rerun `npm run start` and reload the browser window.
+
+See [npm install](https://docs.npmjs.com/cli/v10/commands/npm-install).
+
 ```
 (cd www && NODE_OPTIONS=--openssl-legacy-provider npm run start)
 ```
