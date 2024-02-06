@@ -1,5 +1,5 @@
 /// tb64-wasm-shim is in the pkg directory
-import * as wasm from "tb64_wasm_shim";
+import * as wasm from "tb64-wasm-shim";
 
 /// Write to the clipboard and display a message about it for a few seconds.
 ///
